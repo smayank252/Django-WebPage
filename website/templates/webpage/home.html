@@ -1,25 +1,32 @@
-<form action="action_page.php">
+<!Doctype html>
+<html>
+<head>
+  {% load static %}
+  {% include 'webpage/title.html' %}
+  {% block title %}
+  {% endblock %}
+</head>
+<body>
+{% include 'webpage/Head.html' %}
+{% block header %}
+{% endblock %}
+  <h1>Welcome to first web page powered by django.</h1>
+  <h2>This is super easy if you understand linking</h2>
+  <h3>Django works on templates and staticfiles</h3>
+  <h4>Jinja is a template rendering language in django</h4>
+  <p>
+    Whenever you want to pass any arguments<br/>
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-     <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Signup</button>
-          <button type="button" formaction="/signup.html">Submit to another page</button>
-</form>
-
-
+  </br> or you can say variables to
+     template you can use jinja.
+   </br>always use {{ var }} to
+     acess the var passed to the template.
+   </br>{% if cond %} block for if else statements and close
+     them with {% endif %}
+     jinja makes it really cool.
+  </p>
+  {% include 'webpage/Foot.html' %}
+  {% block footer %}
+  {% endblock %}
+</body>
+</html>

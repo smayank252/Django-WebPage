@@ -10,20 +10,15 @@
 <body>
 {% include 'webpage/Head.html' %}
 {% block header %}
-<p>Welcome to Login Services</p>
 {% endblock %}
-<center>
-<form method="post" action='/mksignup/'>
-  {% csrf_token %}
-  {{ form.as_p }}
-  <p>
-    <input type="submit" value='SignUp' />
-    <a href='/login/'>Login?</a>
-  </p>
-
-</center>
-  {% include 'webpage/Foot.html' %}
-  {% block footer %}
-  {% endblock %}
+<h1>You Have SignUp Sucessfully </h1>
+{% for key,value in data.items %}
+<p>
+  {{ key }} = {{ value }}
+</p>
+{% endfor %}
+{% include 'webpage/Foot.html' %}
+{% block footer %}
+{% endblock %}
 </body>
 </html>

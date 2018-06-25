@@ -10,20 +10,13 @@
 <body>
 {% include 'webpage/Head.html' %}
 {% block header %}
-<p>Welcome to Login Services</p>
 {% endblock %}
-<center>
-<form method="post" action='/mksignup/'>
-  {% csrf_token %}
-  {{ form.as_p }}
-  <p>
-    <input type="submit" value='SignUp' />
-    <a href='/login/'>Login?</a>
-  </p>
+<h1>You Have Logged IN Sucessfully </h1>
+<h1>Welcome Back User {{ name }} </h1>
+<h1>Your Password is {{ password }} </h1>
 
-</center>
-  {% include 'webpage/Foot.html' %}
-  {% block footer %}
-  {% endblock %}
+{% include 'webpage/Foot.html' %}
+{% block footer %}
+{% endblock %}
 </body>
 </html>
